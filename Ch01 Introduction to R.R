@@ -5,7 +5,6 @@
 
 # A sample R session
 # q() is commented out so you don't accidently exit
-
 #learn R
 x <- rnorm(5)
 x
@@ -22,7 +21,6 @@ demo(image)
 demo(Hershey)
 demo(persp)
 # q()
-
 
 help.start()
 help("foo") 
@@ -41,7 +39,6 @@ summary(x)
 hist(x)
 savehistory()
 save.image()
-# q()
 
 q()
 

@@ -7,8 +7,9 @@
 a <- c(1, 2, 5, 3, 6, -2, 4)
 b <- c("one", "two", "three")
 c <- c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)
-
-
+a
+b
+c
 # Using vector subscripts
 a <- c(1, 2, 5, 3, 6, -2, 4)
 a[3]
@@ -51,6 +52,7 @@ dim2 <- c("B1", "B2", "B3")
 dim3 <- c("C1", "C2", "C3", "C4")
 z <- array(1:24, c(2,3,4), dimnames=list(dim1, dim2, dim3))
 z
+z[1,2,3]
 
 
 # Listing 2.4 - Creating a dataframe
@@ -78,15 +80,25 @@ status <- factor(status, order=TRUE)
 patientdata <- data.frame(patientID, age, diabetes, status)
 str(patientdata)                               
 summary(patientdata)
+table(patientdata$diabetes, patientdata$status)
 
 
+patientdata <- data.frame(patientID, age, diabetes, 
+                          status, row.names=patientID)
+
+
+sex <- factor(sex, levels=c(1, 2), labels=c("Male", "Female"))
+patientdata
 # Listing 2.7 - Creating a list
 g <- "My First List"
 h <- c(25, 26, 18, 39)
 j <- matrix(1:10, nrow=5)
+j
 k <- c("one", "two", "three")
 mylist <- list(title=g, ages=h, j, k)
 mylist
+
+
 
 
 # Entering data interactively from the keyboard
@@ -103,7 +115,7 @@ age gender weight
 18 f 120
 "
 mydata <- read.table(header=TRUE, text=mydatatxt)
-
+mydata
 
 # Importing data from a delimited text file
 
